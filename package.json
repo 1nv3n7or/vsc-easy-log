@@ -1,8 +1,14 @@
 {
-  "name": "vsc-easy-log",
-  "displayName": "vsc-easy-log",
-  "description": "",
+  "name": "1nv3n7or-vsc-easy-log",
+  "displayName": "[1nv3n7or] Easy console.log",
+  "description": "Make console.log easier and faster",
+  "icon": "images/icon.jpg",
   "version": "0.0.1",
+  "publisher": "1nv3n7or",
+  "repository": "https://github.com/1nv3n7or/vsc-easy-log",
+  "author": {
+    "name": "1nv3n7or"
+  },
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -18,7 +24,7 @@
         "title": "easy-log"
       }
     ],
-        "keybindings": [
+    "keybindings": [
       {
         "command": "vsc-easy-log.log",
         "key": "ctrl+alt+l",
