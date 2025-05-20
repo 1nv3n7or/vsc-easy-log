@@ -21,8 +21,8 @@
         "keybindings": [
       {
         "command": "vsc-easy-log.log",
-        "key": "cmd+l",
-        "mac": "cmd+l",
+        "key": "ctrl+alt+l",
+        "mac": "ctrl+alt+l",
         "when": "editorTextFocus"
       }
     ]
