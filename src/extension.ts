@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
       return;
     }
 
-    const debugLine = `\nconsole.log("debug", ${selectedText});\n`;
+    const debugLine = `\nconsole.log("====== ${selectedText} =====", ${selectedText});\n`;
 
     editor.edit((editBuilder) => {
       // Insert after the current line
