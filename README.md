@@ -14,6 +14,8 @@ Mac: `"ctrl+alt+l"`
 
 - add basic configs
 - ~~Chain Detection~~
+- multi line select
+- multi variables select
 - Chain Detection for arrays
 - color support
 
