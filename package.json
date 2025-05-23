@@ -3,7 +3,7 @@
   "displayName": "[1nv3n7or] Easy console.log",
   "description": "Make console.log easier and faster",
   "icon": "images/icon.jpg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "1nv3n7or",
   "repository": "https://github.com/1nv3n7or/vsc-easy-log",
   "author": {

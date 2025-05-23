@@ -8,6 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (!editor) {
       vscode.window.showErrorMessage("No active editor");
+
       return;
     }
 
@@ -15,19 +16,21 @@ export function activate(context: vscode.ExtensionContext) {
       vscode.window.showErrorMessage(
         `${editor.document.languageId} language is not supported`
       );
+
       return;
     }
 
     const cursorPosition = editor.selection.active;
-    const lineText = editor.document.lineAt(cursorPosition.line).text;
 
     // Use word range at cursor to get the variable under the cursor
     const wordRange = editor.document.getWordRangeAtPosition(
       cursorPosition,
       /[\w.$]+/
     );
+
     if (!wordRange) {
       vscode.window.showWarningMessage("No variable under cursor");
+
       return;
     }
 
@@ -35,8 +38,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Split the variable by dots to handle nested properties
     const parts = variableText.split(".");
+
     if (parts.length === 0) {
       vscode.window.showWarningMessage("No valid variable under cursor");
+
       return;
     }
 
@@ -44,8 +49,10 @@ export function activate(context: vscode.ExtensionContext) {
     const isValidVariable = parts.every((part) =>
       /^[a-zA-Z_$][a-zA-Z_$0-9]*$/.test(part)
     );
+
     if (!isValidVariable) {
       vscode.window.showWarningMessage("Invalid variable name under cursor");
+
       return;
     }
 
@@ -56,8 +63,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Determine which part of the variable the cursor is on
     let variableToLog = variableText;
+
     if (parts.length > 1) {
       let currentOffset = 0;
+
       for (let i = 0; i < parts.length; i++) {
         const part = parts[i];
         const partLength = part.length;
@@ -78,6 +87,7 @@ export function activate(context: vscode.ExtensionContext) {
           }
           break;
         }
+
         currentOffset = nextOffset;
       }
     }
@@ -90,6 +100,7 @@ export function activate(context: vscode.ExtensionContext) {
         cursorPosition.line,
         Number.MAX_SAFE_INTEGER
       );
+
       editBuilder.insert(position, debugLine);
     });
   });
